@@ -1,0 +1,180 @@
+{
+  "_note": "构造样例数据：公司、来源与文本均为虚构，用于演示和测试规则引擎，不对应任何真实公司或真实事件。主张由人工标注，作为抽取基准。",
+  "events": [
+    {
+      "id": "evt_demo_ma",
+      "title": "辰星电子拟收购海岳光芯",
+      "event_type": "ma",
+      "subjects": [
+        {"name": "辰星电子", "thscode": "DEMO01.DEMO", "role": "acquirer", "aliases": ["辰星"], "is_constructed": true},
+        {"name": "海岳光芯", "thscode": null, "role": "target", "aliases": ["海岳"], "is_constructed": true},
+        {"name": "澜启科技", "thscode": "DEMO02.DEMO", "role": "related", "aliases": ["澜启"], "is_constructed": true}
+      ],
+      "keywords": ["收购", "并购", "股权", "意向协议"],
+      "concepts": ["光芯片"],
+      "is_constructed": true,
+      "note": "澜启科技为构造的同概念公司，用于演示'间接关联'；关系仅表示板块归属，不代表受本事件影响的方向。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "s01", "event_id": "evt_demo_ma",
+      "title": "股吧热帖：辰星电子要收购海岳光芯？",
+      "text": "【股吧帖子】听朋友说辰星电子要收购海岳光芯，估值大概30亿，下周就停牌，听说还要顺带定增募资10亿。消息真假自辨。",
+      "outlet": "某股吧用户", "issuer": "guba_user_1", "source_type": "rumor",
+      "published_at": "2026-09-01T21:40:00+08:00", "fetched_at": "2026-09-01T21:52:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s02", "event_id": "evt_demo_ma",
+      "title": "某财经自媒体：重磅！辰星电子拟35亿收购光芯片公司",
+      "text": "据股吧消息，辰星电子拟收购海岳光芯，交易估值高达35亿元，公司下周停牌。光芯片赛道再迎整合！",
+      "outlet": "某财经自媒体", "issuer": "self_media_1", "source_type": "self_media",
+      "published_at": "2026-09-02T08:15:00+08:00", "fetched_at": "2026-09-02T08:20:00+08:00",
+      "reposted_from": "s01", "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s03", "event_id": "evt_demo_ma",
+      "title": "财经媒体A：辰星电子洽购海岳光芯，对价约25亿元",
+      "text": "据知情人士透露，辰星电子正与海岳光芯洽谈收购事宜，交易对价约25亿元，双方尚未签署协议。辰星电子董秘办未回复置评请求。",
+      "outlet": "财经媒体A", "issuer": "media_a", "source_type": "media",
+      "published_at": "2026-09-02T10:05:00+08:00", "fetched_at": "2026-09-02T17:40:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s04", "event_id": "evt_demo_ma",
+      "title": "财经媒体B：辰星电子收购案对价或达28亿元",
+      "text": "多位接近交易的人士称，辰星电子收购海岳光芯的交易对价或达28亿元，支付方式可能以现金为主。",
+      "outlet": "财经媒体B", "issuer": "media_b", "source_type": "media",
+      "published_at": "2026-09-02T12:30:00+08:00", "fetched_at": "2026-09-02T12:41:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s05", "event_id": "evt_demo_ma",
+      "title": "辰星电子在投资者互动平台回复媒体报道",
+      "text": "公司关注到近期媒体报道。公司目前正在筹划以现金方式收购海岳光芯控股权，尚处于初步洽谈阶段，未签署任何协议，交易价格尚未确定。网传“下周停牌”不属实，公司目前不存在应披露而未披露的停牌事项。如有进展，公司将按规定履行信息披露义务。",
+      "outlet": "辰星电子", "issuer": "company_chenxing", "source_type": "company_reply",
+      "published_at": "2026-09-02T19:30:00+08:00", "fetched_at": "2026-09-02T19:35:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s06", "event_id": "evt_demo_ma",
+      "title": "某券商研报：并购光芯片资产，打开第二成长曲线",
+      "text": "我们认为，若收购顺利落地，海岳光芯的光芯片能力将与公司现有业务形成协同；按传闻对价测算，预计可增厚公司2027年EPS约0.15元。以上为基于公开信息的推测，不构成投资建议。",
+      "outlet": "某券商研究所", "issuer": "broker_1", "source_type": "research",
+      "published_at": "2026-09-03T09:00:00+08:00", "fetched_at": "2026-09-03T09:10:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s07", "event_id": "evt_demo_ma",
+      "title": "辰星电子：关于签署股权收购意向协议的公告",
+      "text": "公司于2026年9月15日与海岳光芯股东签署《股权收购意向协议》，拟以现金方式收购海岳光芯51%股权，交易对价暂定为22.8亿元，最终以评估结果为准。双方预计于2026年11月30日前签署正式股权转让协议。本次交易不构成重大资产重组，公司股票不停牌。",
+      "outlet": "辰星电子", "issuer": "company_chenxing", "source_type": "announcement",
+      "event_time": "2026-09-15T15:00:00+08:00",
+      "published_at": "2026-09-15T20:00:00+08:00", "fetched_at": "2026-09-15T20:06:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s08", "event_id": "evt_demo_ma",
+      "title": "财经媒体A：辰星电子洽购海岳光芯（更新）",
+      "text": "【更正说明】本文初稿称交易对价约25亿元。根据辰星电子9月15日公告，交易对价暂定为22.8亿元，现予更正。辰星电子已与海岳光芯股东签署股权收购意向协议。",
+      "outlet": "财经媒体A", "issuer": "media_a", "source_type": "media",
+      "published_at": "2026-09-02T10:05:00+08:00", "updated_at": "2026-09-16T09:30:00+08:00",
+      "fetched_at": "2026-09-16T09:42:00+08:00", "version_of": "s03",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s09", "event_id": "evt_demo_ma",
+      "title": "辰星电子股价异动解读",
+      "text": "辰星电子今日涨停。异动原因：公司公告与海岳光芯股东签署股权收购意向协议，拟现金收购其控股权，切入光芯片领域。",
+      "outlet": "行情异动解读", "issuer": "market_note", "source_type": "market_note",
+      "published_at": "2026-09-16T15:10:00+08:00", "fetched_at": "2026-09-16T15:12:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s10", "event_id": "evt_demo_ma",
+      "title": "交易所：关于对辰星电子的关注函",
+      "text": "你公司于2026年9月15日披露股权收购意向协议，交易对价暂定22.8亿元。请你公司说明标的估值的合理性、资金来源及对公司财务状况的影响，并于2026年9月25日前书面回复。",
+      "outlet": "证券交易所", "issuer": "exchange", "source_type": "regulator",
+      "published_at": "2026-09-18T18:00:00+08:00", "fetched_at": "2026-09-19T08:30:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s11", "event_id": "evt_demo_ma",
+      "title": "辰星电子：关于前次公告的更正公告",
+      "text": "公司于2026年9月15日披露的《关于签署股权收购意向协议的公告》中，“拟以现金方式收购海岳光芯51%股权”表述有误，正确表述为“拟以现金方式收购海岳光芯55%股权”，交易对价暂定22.8亿元不变。由此给投资者带来不便，敬请谅解。",
+      "outlet": "辰星电子", "issuer": "company_chenxing", "source_type": "announcement",
+      "published_at": "2026-09-22T20:00:00+08:00", "fetched_at": "2026-09-22T20:03:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s12", "event_id": "evt_demo_ma",
+      "title": "辰星电子：关于对交易所关注函的回复公告",
+      "text": "公司已就关注函所涉事项作出回复。本次交易资金来源为公司自有资金及银行并购贷款，不涉及发行股份募集资金。标的估值采用收益法，评估工作尚在进行中。",
+      "outlet": "辰星电子", "issuer": "company_chenxing", "source_type": "announcement",
+      "published_at": "2026-09-28T19:00:00+08:00", "fetched_at": "2026-09-28T19:05:00+08:00",
+      "origin": "demo", "is_constructed": true
+    },
+    {
+      "id": "s13", "event_id": "evt_demo_ma",
+      "title": "财经媒体C：辰星电子收购对价或上调",
+      "text": "有接近交易的人士称，随着评估推进，辰星电子收购海岳光芯的最终对价可能上调至26亿元，目前双方仍在磋商。",
+      "outlet": "财经媒体C", "issuer": "media_c", "source_type": "media",
+      "published_at": "2026-10-08T10:00:00+08:00", "fetched_at": "2026-10-08T10:20:00+08:00",
+      "origin": "demo", "is_constructed": true
+    }
+  ],
+  "claims": [
+    {"id": "c01", "source_id": "s01", "slot": "target", "value": "海岳光芯", "nature": "rumor", "attribution": "anonymous", "quote": "辰星电子要收购海岳光芯"},
+    {"id": "c02", "source_id": "s01", "slot": "consideration", "value": "30", "display_value": "约30亿元", "unit": "亿元", "nature": "rumor", "attribution": "anonymous", "quote": "估值大概30亿"},
+    {"id": "c03", "source_id": "s01", "slot": "trading_halt", "value": "下周停牌", "nature": "rumor", "attribution": "anonymous", "quote": "下周就停牌", "valid_until": "2026-09-08T09:30:00+08:00"},
+    {"id": "c04", "source_id": "s01", "slot": "financing", "value": "定增募资10亿元", "nature": "rumor", "attribution": "anonymous", "quote": "顺带定增募资10亿"},
+    {"id": "c05", "source_id": "s01", "slot": "deal_stage", "value": "传闻", "nature": "rumor", "attribution": "anonymous", "quote": "听朋友说辰星电子要收购海岳光芯"},
+
+    {"id": "c06", "source_id": "s02", "slot": "target", "value": "海岳光芯", "nature": "rumor", "attribution": "anonymous", "quote": "辰星电子拟收购海岳光芯"},
+    {"id": "c07", "source_id": "s02", "slot": "consideration", "value": "35", "display_value": "35亿元", "unit": "亿元", "nature": "rumor", "attribution": "anonymous", "quote": "交易估值高达35亿元"},
+    {"id": "c08", "source_id": "s02", "slot": "trading_halt", "value": "下周停牌", "nature": "rumor", "attribution": "anonymous", "quote": "公司下周停牌"},
+
+    {"id": "c09", "source_id": "s03", "slot": "target", "value": "海岳光芯", "nature": "fact", "attribution": "anonymous", "quote": "辰星电子正与海岳光芯洽谈收购事宜"},
+    {"id": "c10", "source_id": "s03", "slot": "consideration", "value": "25", "display_value": "约25亿元", "unit": "亿元", "nature": "fact", "attribution": "anonymous", "quote": "交易对价约25亿元"},
+    {"id": "c11", "source_id": "s03", "slot": "deal_stage", "value": "初步洽谈", "nature": "fact", "attribution": "anonymous", "quote": "双方尚未签署协议"},
+
+    {"id": "c12", "source_id": "s04", "slot": "consideration", "value": "28", "display_value": "约28亿元", "unit": "亿元", "nature": "fact", "attribution": "anonymous", "quote": "交易对价或达28亿元"},
+    {"id": "c13", "source_id": "s04", "slot": "payment", "value": "现金", "nature": "speculation", "attribution": "anonymous", "quote": "支付方式可能以现金为主"},
+
+    {"id": "c14", "source_id": "s05", "slot": "target", "value": "海岳光芯", "nature": "fact", "attribution": "official", "quote": "筹划以现金方式收购海岳光芯控股权"},
+    {"id": "c15", "source_id": "s05", "slot": "payment", "value": "现金", "nature": "fact", "attribution": "official", "quote": "以现金方式收购海岳光芯控股权"},
+    {"id": "c16", "source_id": "s05", "slot": "deal_stage", "value": "初步洽谈", "nature": "fact", "attribution": "official", "quote": "尚处于初步洽谈阶段"},
+    {"id": "c17", "source_id": "s05", "slot": "consideration", "value": "未确定", "display_value": "尚未确定", "nature": "fact", "attribution": "official", "quote": "交易价格尚未确定"},
+    {"id": "c18", "source_id": "s05", "slot": "trading_halt", "value": "下周停牌", "nature": "fact", "action": "deny", "attribution": "official", "quote": "网传“下周停牌”不属实"},
+
+    {"id": "c19", "source_id": "s06", "slot": "earnings_impact", "value": "增厚2027年EPS约0.15元", "nature": "speculation", "attribution": "named", "quote": "预计可增厚公司2027年EPS约0.15元"},
+    {"id": "c20", "source_id": "s06", "slot": "earnings_impact", "value": "与现有业务形成协同", "nature": "opinion", "attribution": "named", "quote": "海岳光芯的光芯片能力将与公司现有业务形成协同"},
+
+    {"id": "c21", "source_id": "s07", "slot": "deal_stage", "value": "已签意向协议", "nature": "fact", "attribution": "official", "quote": "签署《股权收购意向协议》", "valid_until": "2026-11-30T23:59:59+08:00"},
+    {"id": "c22", "source_id": "s07", "slot": "stake", "value": "51", "display_value": "51%", "unit": "%", "nature": "fact", "attribution": "official", "quote": "收购海岳光芯51%股权"},
+    {"id": "c23", "source_id": "s07", "slot": "consideration", "value": "22.8", "display_value": "22.8亿元（暂定）", "unit": "亿元", "nature": "fact", "attribution": "official", "quote": "交易对价暂定为22.8亿元"},
+    {"id": "c24", "source_id": "s07", "slot": "payment", "value": "现金", "nature": "fact", "attribution": "official", "quote": "拟以现金方式收购"},
+    {"id": "c25", "source_id": "s07", "slot": "trading_halt", "value": "不停牌", "nature": "fact", "attribution": "official", "quote": "公司股票不停牌"},
+    {"id": "c26", "source_id": "s07", "slot": "target", "value": "海岳光芯", "nature": "fact", "attribution": "official", "quote": "与海岳光芯股东签署"},
+
+    {"id": "c27", "source_id": "s08", "slot": "consideration", "value": "22.8", "display_value": "22.8亿元（暂定）", "unit": "亿元", "nature": "fact", "action": "correct", "attribution": "named", "quote": "交易对价暂定为22.8亿元，现予更正"},
+    {"id": "c28", "source_id": "s08", "slot": "deal_stage", "value": "已签意向协议", "nature": "fact", "attribution": "named", "quote": "已与海岳光芯股东签署股权收购意向协议"},
+
+    {"id": "c29", "source_id": "s09", "slot": "deal_stage", "value": "已签意向协议", "nature": "fact", "attribution": "named", "quote": "签署股权收购意向协议"},
+
+    {"id": "c30", "source_id": "s10", "slot": "regulatory", "value": "已收到关注函（估值合理性、资金来源）", "nature": "fact", "attribution": "official", "quote": "请你公司说明标的估值的合理性、资金来源及对公司财务状况的影响", "valid_until": "2026-09-25T23:59:59+08:00"},
+
+    {"id": "c31", "source_id": "s11", "slot": "stake", "value": "55", "display_value": "55%", "unit": "%", "nature": "fact", "action": "correct", "attribution": "official", "quote": "拟以现金方式收购海岳光芯55%股权"},
+    {"id": "c32", "source_id": "s11", "slot": "consideration", "value": "22.8", "display_value": "22.8亿元（暂定）", "unit": "亿元", "nature": "fact", "attribution": "official", "quote": "交易对价暂定22.8亿元不变"},
+
+    {"id": "c33", "source_id": "s12", "slot": "regulatory", "value": "已回复关注函", "nature": "fact", "attribution": "official", "quote": "公司已就关注函所涉事项作出回复"},
+    {"id": "c34", "source_id": "s12", "slot": "financing", "value": "自有资金及银行并购贷款", "nature": "fact", "attribution": "official", "quote": "本次交易资金来源为公司自有资金及银行并购贷款"},
+
+    {"id": "c35", "source_id": "s13", "slot": "consideration", "value": "26", "display_value": "或上调至26亿元", "unit": "亿元", "nature": "speculation", "attribution": "anonymous", "quote": "最终对价可能上调至26亿元"}
+  ],
+  "watchlist": [
+    {"thscode": "DEMO01.DEMO", "name": "辰星电子", "is_constructed": true, "concepts": ["光芯片"]},
+    {"thscode": "DEMO02.DEMO", "name": "澜启科技", "is_constructed": true, "concepts": ["光芯片"]}
+  ]
+}

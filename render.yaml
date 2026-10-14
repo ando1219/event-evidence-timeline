@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: event-evidence-timeline
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: FUYAO_API_KEY
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: LLM_MODEL
+        value: deepseek-chat
+      - key: IFIND_MCP_URL
+        sync: false
+      - key: IFIND_MCP_TOKEN
+        sync: false
+      - key: IFIND_NEWS_TOOL
+        sync: false

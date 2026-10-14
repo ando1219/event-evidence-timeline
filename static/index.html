@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>事件证据时间线</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>事件证据时间线</span>
+    </a>
+    <nav class="nav">
+      <a href="#/" data-nav="home">关注与事件</a>
+      <a href="#/ingest" data-nav="ingest">导入新消息</a>
+    </nav>
+    <div class="status-chips" id="status-chips"></div>
+  </header>
+  <div class="disclaimer-bar">本产品只整理事实、来源与证据，不预测涨跌，不提供买卖建议。标注「构造样例」的公司与文本均为虚构。</div>
+  <main id="app" class="app"><div class="loading">加载中…</div></main>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="drawer" id="drawer" hidden aria-modal="true" role="dialog">
+    <button class="drawer-close" id="drawer-close" aria-label="关闭">×</button>
+    <div id="drawer-body"></div>
+  </aside>
+  <script src="/static/app.js"></script>
+</body>
+</html>
